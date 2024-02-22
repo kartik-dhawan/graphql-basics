@@ -1,4 +1,4 @@
-import { PostcardsData, PlacesData } from "./db"
+import { PostcardsData, PlacesData } from "./db.ts"
 // import { Resolvers } from "./generated/resolvers-types"
 
 export const resolvers = {

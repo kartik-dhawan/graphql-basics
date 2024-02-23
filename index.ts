@@ -5,7 +5,7 @@ import { resolvers } from "./resolvers.ts"
 import express from "express"
 import cors from "cors"
 
-const app = express()
+export const app = express()
 
 const server = new ApolloServer({
   // data schema - map of data structure

@@ -5,7 +5,7 @@
   "main": "index.ts",
   "type": "module",
   "engines": {
-    "node": "14.x"
+    "node": "20.x"
   },
   "scripts": {
     "build": "tsc",

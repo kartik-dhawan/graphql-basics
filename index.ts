@@ -19,7 +19,7 @@ await server.start()
 
 app.use(cors())
 app.use(express.json())
-// app.use("/graphql", expressMiddleware(server))
+app.use("/graphql", expressMiddleware(server))
 app.get("/", (req, res) => {
   res.json({ name: "kartik" })
 })

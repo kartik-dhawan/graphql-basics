@@ -7,26 +7,32 @@ import cors from "cors"
 
 export const app = express()
 
-const server = new ApolloServer({
-  // data schema - map of data structure
-  typeDefs,
+const serverStart = async () => {
+  const server = new ApolloServer({
+    // data schema - map of data structure
+    typeDefs,
 
-  // resolvers - to handle queries
-  resolvers,
-})
+    // resolvers - to handle queries
+    resolvers,
+  })
 
-await server.start()
+  await server.start()
 
-app.use(cors())
-app.use(express.json())
-// app.use("/graphql", expressMiddleware(server))
-app.get("/", (req, res) => {
-  res.json({ name: "kartik" })
-})
+  app.use(cors())
+  app.use(express.json())
+  // app.use("/graphql", expressMiddleware(server))
+  app.get("/", (req, res) => {
+    res.json({ name: "kartik" })
+  })
 
-const PORT = process.env.PORT || 4000
+  const PORT = process.env.PORT || 4000
 
-app.listen(PORT, () => {
-  console.log("Server ready at url: https://localhost:4000")
-  console.log("GraphQL playground ready at url: https://localhost:4000/graphql")
-})
+  app.listen(PORT, () => {
+    console.log("Server ready at url: https://localhost:4000")
+    console.log(
+      "GraphQL playground ready at url: https://localhost:4000/graphql"
+    )
+  })
+}
+
+serverStart()

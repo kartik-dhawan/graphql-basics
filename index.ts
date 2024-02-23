@@ -19,12 +19,14 @@ await server.start()
 
 app.use(cors())
 app.use(express.json())
-app.use("/graphql", expressMiddleware(server))
+// app.use("/graphql", expressMiddleware(server))
 app.get("/", (req, res) => {
   res.json({ name: "kartik" })
 })
 
-app.listen(4000, () => {
+const PORT = process.env.PORT || 4000
+
+app.listen(PORT, () => {
   console.log("Server ready at url: https://localhost:4000")
   console.log("GraphQL playground ready at url: https://localhost:4000/graphql")
 })
